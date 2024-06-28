@@ -30,7 +30,6 @@
 
 // export default TodoWrapper;
 
-
 import React, { useState } from "react";
 import "./css/style.css";
 import TodoForm from "./TodoForm";
@@ -51,15 +50,34 @@ function TodoWrapper() {
     // console.log("Current todos:", todos);
   };
 
+  const toggleComplete = (id) => {
+    setTodos(
+      todos.map(todo =>
+        todo.id === id ? {...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+  // const deleteTodo = () => {}
+
   return (
-    <div 
-      className="todo-wrapper" 
-      style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "20px" }}
+    <div
+      className="todo-wrapper"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        margin: "20px",
+      }}
     >
+      <h1>Get things done</h1>
       <TodoForm addTodo={addTodo} />
       {/* To Generate a todo for each value and state */}
       {todos.map((todo) => (
-        <Todo task={todo} key={todo.id} />
+        <Todo task={todo} key={todo.id}
+         toggleComplete={toggleComplete} 
+        //  deleteTodo={deleteTodo}
+         />
       ))}
     </div>
   );

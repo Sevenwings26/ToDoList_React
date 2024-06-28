@@ -17,30 +17,44 @@
 
 // export default Todo;
 
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const Todo = ({ task }) => {
+const Todo = ({ task, toggleComplete }) => {
   return (
-    <div 
-      className='todo' 
-      style={{ 
-        border: "1px solid red", 
-        margin: "10px", 
-        padding: "10px", 
-        width: "300px", 
-        display: "flex", 
-        justifyContent: "space-between", 
-        alignItems: "center" 
+    <div
+      className="todo"
+      style={{
+        border: "1px solid red",
+        margin: "10px",
+        padding: "10px",
+        width: "300px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
       }}
     >
-        <p style={{ margin: "0" }}>{task.task}</p>
-        <div>
-            <FontAwesomeIcon icon={faPenToSquare} style={{ marginRight: "10px", cursor: "pointer" }} />
-            <FontAwesomeIcon icon={faTrash} style={{ cursor: "pointer" }} />
-        </div>
+      {/* To Cross out completed task  */}
+      <p
+        style={{
+          cursor: "pointer",
+          textDecoration: task.completed ? "line-through" : "none",
+          color: task.completed ? "gray" : "black",
+        }}
+        onClick={() => toggleComplete(task.id)}
+      >
+        {task.task}
+      </p>
+
+      <div>
+        <FontAwesomeIcon
+          icon={faPenToSquare}
+          style={{ marginRight: "10px", cursor: "pointer" }}
+        />
+        <FontAwesomeIcon icon={faTrash} style={{ cursor: "pointer" }} />
+      </div>
     </div>
   );
 };
