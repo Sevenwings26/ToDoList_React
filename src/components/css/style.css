@@ -1,0 +1,31 @@
+.todo-wrapper{
+    width: 40%;
+    /* background-color: rgb(15, 14, 14); */
+    margin: auto;
+    padding: 2rem;
+}
+
+/* .todo-form {
+    margin: auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+} */
+
+.todo-input,
+.todo-btn {
+    padding: 0.3rem 0.2rem;
+    margin-bottom: 2rem;
+}
+
+.todo {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1rem 1rem;
+    background-color: white;
+    border-radius: 20px;
+}
+
