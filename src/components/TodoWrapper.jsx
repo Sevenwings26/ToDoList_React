@@ -68,7 +68,11 @@ function TodoWrapper() {
   };
 
   const editTask = (task, id) => {
-    setTodos(todos.map(todo => todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo));
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
+      )
+    );
   };
 
   return (
@@ -78,7 +82,7 @@ function TodoWrapper() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        margin: "20px",
+        margin: "auto",
       }}
     >
       <h1>Get things done</h1>

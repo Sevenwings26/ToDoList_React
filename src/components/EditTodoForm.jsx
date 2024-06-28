@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./css/style.css";
+
 
 const EditTodoForm = ({ editTodo, task }) => {
   const [value, setValue] = useState(task.task);
@@ -14,22 +16,19 @@ const EditTodoForm = ({ editTodo, task }) => {
 
   return (
     <form 
-      className="edit-todo-form" 
+      className="todo-form" 
       onSubmit={handleSubmit} 
-      style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "20px" }}
     >
       <input
         type="text"
-        className="edit-todo-input"
+        className="todo-input"
         placeholder="Update task"
         value={value}
         onChange={handleChange}
-        style={{ padding: "10px", fontSize: "16px", marginBottom: "10px", width: "300px" }}
       />
       <button 
         type="submit" 
-        className="edit-todo-btn" 
-        style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}
+        className="todo-btn" 
       >
         Update Task
       </button>

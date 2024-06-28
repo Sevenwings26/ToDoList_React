@@ -36,12 +36,7 @@ const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
     <div
       className="todo"
       style={{
-        border: "1px solid red",
         margin: "10px",
-        padding: "10px",
-        width: "300px",
-        display: "flex",
-        justifyContent: "space-between",
         alignItems: "center",
       }}
     >
@@ -50,7 +45,7 @@ const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
         style={{
           cursor: "pointer",
           textDecoration: task.completed ? "line-through" : "none",
-          color: task.completed ? "gray" : "black",
+          color: task.completed ? "gray" : "white",
         }}
         onClick={() => toggleComplete(task.id)}
       >
