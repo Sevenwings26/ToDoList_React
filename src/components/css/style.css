@@ -1,3 +1,7 @@
+*{
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 .todo-wrapper{
     width: 100%;
     background-color: orange;
