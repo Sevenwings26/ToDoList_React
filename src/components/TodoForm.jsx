@@ -47,13 +47,7 @@ const TodoForm = ({ addTodo }) => {
 
   return (
     <form
-      className="todo-form"
-      onSubmit={handleSubmit}
-      // style={{
-      //   alignItems: "center",
-      //   margin: "20px",
-      // }}
-    >
+      className="todo-form" onSubmit={handleSubmit}>
       <input
         type="text"
         className="todo-input"

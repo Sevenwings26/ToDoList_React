@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "./css/style.css";
 
-
 const EditTodoForm = ({ editTodo, task }) => {
   const [value, setValue] = useState(task.task);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    editTodo(value, task.id);
+    editTodo(task.id, value);
   };
 
   const handleChange = (e) => {
@@ -15,10 +14,7 @@ const EditTodoForm = ({ editTodo, task }) => {
   };
 
   return (
-    <form 
-      className="todo-form" 
-      onSubmit={handleSubmit} 
-    >
+    <form className="todo-form" onSubmit={handleSubmit}>
       <input
         type="text"
         className="todo-input"
@@ -26,10 +22,7 @@ const EditTodoForm = ({ editTodo, task }) => {
         value={value}
         onChange={handleChange}
       />
-      <button 
-        type="submit" 
-        className="todo-btn" 
-      >
+      <button type="submit" className="todo-btn">
         Update Task
       </button>
     </form>
